@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {ConfigProvider, theme} from 'antd';
+import { HashRouter } from "react-router-dom";
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -15,10 +16,12 @@ root.render(
         token: {
           colorPrimary: '#00b96b',
         },
-        // algorithm: theme.darkAlgorithm,
+        algorithm: theme.darkAlgorithm,
       }}
     >
-      <App />
+      <HashRouter>
+        <App />
+      </HashRouter>
     </ConfigProvider>
   </React.StrictMode>
 );
