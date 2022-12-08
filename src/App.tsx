@@ -2,6 +2,7 @@ import React from 'react';
 import { Layout, theme, Typography, ConfigProvider } from 'antd';
 import RouteView from './router';
 import Header from './pages/header';
+import BackView from './pages/backView';
 import type { RootState } from './store';
 import { useSelector } from 'react-redux'
 import './App.css';
@@ -20,7 +21,9 @@ function App() {
         algorithm: isSun ? theme.defaultAlgorithm : theme.darkAlgorithm,
       }}
     >
-      <Layout>
+        {/* <canvas id='plum-canvas'></canvas> */}
+      <Layout style={{background: isSun ? 'transparent' : '#141414'}}>
+        <BackView />
         <header>
           <Header />
         </header>
