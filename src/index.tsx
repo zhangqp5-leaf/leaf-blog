@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {ConfigProvider, theme} from 'antd';
 import { HashRouter } from "react-router-dom";
 import './index.css';
 import App from './App';
+import { store } from './store'
+import { Provider } from 'react-redux'
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(
@@ -11,18 +12,11 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <ConfigProvider
-      theme={{
-        token: {
-          colorPrimary: '#00b96b',
-        },
-        algorithm: theme.darkAlgorithm,
-      }}
-    >
-      <HashRouter>
-        <App />
-      </HashRouter>
-    </ConfigProvider>
+    <HashRouter>
+      <Provider store={store}>
+        <App/>
+      </Provider>
+    </HashRouter>
   </React.StrictMode>
 );
 

@@ -1,36 +1,37 @@
 import React from 'react';
-import { Layout, theme, Button, Typography } from 'antd';
-import { Routes, Route, Link } from 'react-router-dom';
-import { router } from './router';
-import Home from './pages/home';
-import Nav from './pages/nav';
+import { Layout, theme, Typography, ConfigProvider } from 'antd';
+import RouteView from './router';
+import Header from './pages/header';
+import type { RootState } from './store';
+import { useSelector } from 'react-redux'
 import './App.css';
 
 const { Text } = Typography;
 
 function App() {
-  const {
-    token: { colorBgContainer },
-  } = theme.useToken();
+  const isSun = useSelector((state: RootState) => state.lightDark.value)
 
   return (
-    <Layout>
-      <header style={{background: colorBgContainer}}>
-        <Link to="/"><Button>Home</Button></Link>
-        <Link to="/home"><Button>hom1</Button></Link>
-        <Link to="/nav"><Button>nav</Button></Link>
-      </header>
-      <main style={{background: colorBgContainer}}>
-        <Routes>
-          <Route path="/nav" element={<Nav />}></Route>
-          <Route path="/home" element={<Home />}></Route>
-          <Route path="/" element={<Home />}></Route>
-        </Routes>
-      </main>
-      <footer style={{background: colorBgContainer}}>
-        <Text>@leaf</Text>
-      </footer>
-    </Layout>
+    <ConfigProvider
+      theme={{
+        token: {
+          colorPrimary: '#00b96b',
+        },
+        algorithm: isSun ? theme.defaultAlgorithm : theme.darkAlgorithm,
+      }}
+    >
+      <Layout>
+        <header>
+          <Header />
+        </header>
+        <main>
+          <RouteView />
+        </main>
+        <footer>
+          <Text>@leaf</Text>
+        </footer>
+      </Layout>
+    </ConfigProvider>
   );
 }
 

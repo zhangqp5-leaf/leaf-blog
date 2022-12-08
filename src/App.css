@@ -1,7 +1,7 @@
 header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  /* display: flex;
+  justify-content: space-between;
+  align-items: center; */
   height: var(--header-height);
 }
 
@@ -13,7 +13,5 @@ footer {
 }
 
 main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 24px;
 }
