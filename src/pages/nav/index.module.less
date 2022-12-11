@@ -1,0 +1,50 @@
+.nav {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  // overflow: scroll;
+  // height: 100%;
+  margin: 0 auto;
+  width: 60vw;
+
+  .nav__right {
+    padding: 0.8em 1em;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+
+    &__list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 8px;
+    }
+  }
+
+  .nav__left {
+    height: calc(100% - 240px);
+    position: fixed;
+    width: 25vw;
+    top: 48px;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: 1s all ease-in;
+
+      &__item {
+        border-left: 3px solid transparent;
+        padding-left: 8px;
+        cursor: pointer;
+      }
+
+      .active {
+        color: #1890ff;
+        border-left: 3px solid #1890ff;
+      }
+    }
+  }
+}

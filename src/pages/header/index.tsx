@@ -16,7 +16,7 @@ const Home = () => {
         <Link to="/home">leaf</Link>
       </section>
       <section className={styles.right}>
-        <Link to="/blog">blog</Link>
+        <Link to="/blog/list">blog</Link>
         <Link to="/nav">nav</Link>
         <section>
           <img

@@ -21,4 +21,17 @@ module.exports = {
       "@":addPath("src")
     }
   },
+  rules: [
+    {
+      test: /\.md$/,
+      use: [
+        {
+          loader: "html-loader",
+        },
+        {
+          loader: "remark-loader",
+        },
+      ],
+    },
+  ],
 };

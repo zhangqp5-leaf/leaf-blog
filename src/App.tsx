@@ -21,7 +21,6 @@ function App() {
         algorithm: isSun ? theme.defaultAlgorithm : theme.darkAlgorithm,
       }}
     >
-        {/* <canvas id='plum-canvas'></canvas> */}
       <Layout style={{background: isSun ? 'transparent' : '#141414'}}>
         <BackView />
         <header>

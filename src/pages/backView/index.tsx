@@ -20,26 +20,41 @@ const BackView = () => {
   const init = (ctx: CanvasRenderingContext2D) => {
     ctx.strokeStyle = 'rgba(0, 0, 0, 0.1)';
     step(ctx, {
-      start: {x: WIDTH / 2, y: HEIGHT},
-      length: 2,
+      start: {x: WIDTH * Math.random(), y: HEIGHT},
+      length: 1,
       theta: -Math.PI / 2,
+    })
+    step(ctx, {
+      start: {x: WIDTH * Math.random(), y: 0},
+      length: 1,
+      theta: Math.PI / 2,
+    })
+    step(ctx, {
+      start: {x: 0, y: HEIGHT * Math.random()},
+      length: 1,
+      theta: 0,
+    })
+    step(ctx, {
+      start: {x: WIDTH, y: HEIGHT * Math.random()},
+      length: 1,
+      theta: Math.PI,
     })
   }
   const pendingTasks: Function[] = [];
   const step = (ctx: CanvasRenderingContext2D, b: Branch, depth=0) => {
     const end = getEndPoint(b)
     drawBranch(ctx, b);
-    if (depth < 4 || Math.random() < 0.5) {
+    if ((depth < 4 || Math.random() < 0.5) && depth < WIDTH / 2) {
       pendingTasks.push(() => step(ctx, {
         start: end,
-        length: b.length + (Math.random() * 4 - 2),
+        length: b.length + (Math.random() * 2 - 1),
         theta: b.theta - 0.4 * Math.random()
       }, depth + 1))
     }
-    if (depth < 4 || Math.random() < 0.5) {
+    if ((depth < 4 || Math.random() < 0.5) && depth < WIDTH / 2) {
       pendingTasks.push(() => step(ctx, {
         start: end,
-        length: b.length + (Math.random() * 4 - 2),
+        length: b.length + (Math.random() * 2 - 1),
         theta: b.theta + 0.4 * Math.random()
       }, depth + 1));
     }
@@ -53,7 +68,7 @@ const BackView = () => {
   function startFrame() {
     requestAnimationFrame(() => {
       frameCount = frameCount + 1
-      if (frameCount % 10 === 0) {
+      if (frameCount % 12 === 0) {
         frame();
       }
       startFrame()
@@ -79,7 +94,6 @@ const BackView = () => {
   useEffect(() => {
     const canvas = el.current!;
     const ctx = canvas.getContext('2d')!;
-    console.log(canvas);
     init(ctx);
   })
 

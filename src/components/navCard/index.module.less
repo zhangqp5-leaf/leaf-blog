@@ -1,0 +1,41 @@
+.item {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 8px;
+  background: transparent;
+  padding: 0.8em 1em;
+  transition: 0.4s all ease-out;
+  opacity: 0.6;
+  cursor: pointer;
+
+  &__left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__article {
+    &__title {
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    &__title:hover {
+      // color: #000;
+    }
+
+    &__des {
+      font-size: 0.8rem;
+    }
+  }
+
+  img {
+    width: 90%;
+  }
+}
+.item:hover {
+  // background: #f6f6f6;
+  opacity: 1;
+  border-radius: 4px;
+}
