@@ -1,17 +1,24 @@
 import React, {useState} from "react";
 import { Link } from 'react-router-dom';
-import sunImg from '@/assets/svg/sun.svg';
-import moonImg from '@/assets/svg/moon.svg';
 import type { RootState } from '../../store';
 import { useSelector, useDispatch } from 'react-redux'
+import { createFromIconfontCN } from '@ant-design/icons';
 import { changeLightDark } from '../../store/lightDarkSlice';
+import classNames from "classnames";
 import styles from './index.module.less';
 
 const Home = () => {
   const isSun = useSelector((state: RootState) => state.lightDark.value)
   const dispatch = useDispatch()
+  const IconFont = createFromIconfontCN({
+    scriptUrl: '//at.alicdn.com/t/c/font_3770106_re8mh5ft01i.js',
+  });
   return (
-    <div className={styles.header}>
+    <div className={classNames({
+      [styles.header]: true,
+      [styles.header__sun]: !!isSun,
+      [styles.header__moon]: !isSun,
+    })} style={isSun ? {} : {color: '#fff'}}>
       <section>
         <Link to="/home">leaf</Link>
       </section>
@@ -19,10 +26,9 @@ const Home = () => {
         <Link to="/blog/list">blog</Link>
         <Link to="/nav">nav</Link>
         <section>
-          <img
-            src={isSun ? sunImg : moonImg}
-            style={{width: '24px', cursor: 'pointer'}}
-            alt=''
+          <IconFont
+            type={isSun ? "icon-sun" : "icon-moon"}
+            style={{cursor: 'pointer', fontSize: '24px'}}
             onClick={() => dispatch(changeLightDark())}
           />
         </section>

@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './index.module.less';
 
 interface TitleProps {
-  titleName: String,
+  titleName?: String,
   fontStyle?: any,
   id: string,
 }

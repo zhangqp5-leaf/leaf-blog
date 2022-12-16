@@ -58,7 +58,7 @@ const Nav = () => {
                 <div key={item[0]}>
                   <div data-src="1">
                     <Title
-                      titleName={item[0]}
+                      titleName={codeNavTypeMap.get(item[0])}
                       fontStyle='18px'
                       id={item[0]}
                     />
