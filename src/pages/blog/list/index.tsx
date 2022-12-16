@@ -24,13 +24,13 @@ const Blog = () => {
             
             return (
               <div className={styles.blog__year}>
-                {blogYear[0]}
+                <section className={styles.blog__title}>{blogYear[0].substring(1)}</section>
                 {
                   blogYear[1].map(blog => {
                     return (
                       <div className={styles.blog__item} onClick={() => goBlogDetail(blog.id)}>
-                        <Title level={3}>{blog.title}</Title>
-                        <Paragraph>{blog.date}</Paragraph>
+                        <section className={styles.blog__item__title}>{blog.title}</section>
+                        <section>{blog.date}</section>
                       </div>
                     )
                   })

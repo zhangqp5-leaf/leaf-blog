@@ -196,37 +196,31 @@ interface BlogDataItem {
   id: string,
 }
 export const blogData: BlogData = {
-  '2022': [
+  'a2022': [
     {
-      title: 'title1',
-      date: '2022-01-01',
-      id: '1',
+      title: '简单聊一下git在工作中的使用',
+      date: '2022-06-07',
+      id: '4',
     },
     {
-      title: 'title2',
-      date: '2022-01-01',
-      id: '2',
-    },
-  ],
-  '2021': [
-    {
-      title: 'title3',
-      date: '2022-01-01',
+      title: '节流和防抖',
+      date: '2022-06-07',
       id: '3',
     },
     {
-      title: 'title4',
-      date: '2022-01-01',
-      id: '4',
+      title: 'flex简介',
+      date: '2022-03-01',
+      id: '1',
+    },
+  ],
+  'a2021': [
+    {
+      title: 'react生命周期',
+      date: '2021-09-24',
+      id: '2',
     },
   ],
 }
-// export const blogMap = new Map([
-//   ['1', md1],
-//   ['2', md2],
-//   ['3', md3],
-//   ['4', md4],
-// ])
 interface BlogMap {
   [key: string]: any,
 }

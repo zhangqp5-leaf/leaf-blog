@@ -20,7 +20,7 @@ const Blog = () => {
   
   return (
     <Text>
-      <section style={{margin: '0 auto', width: '50%'}}>
+      <section style={{margin: '0 auto', width: '50%', minHeight: '100vh'}}>
         <ReactMarkdown children={md} />
       </section>
     </Text>

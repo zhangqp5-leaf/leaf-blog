@@ -8,11 +8,22 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
+    .blog__title {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
     .blog__item {
       opacity: 0.5;
       transition: 0.5s all ease-out;
       width: 100%;
       cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      &__title {
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
     }
     .blog__item:hover {
       opacity: 1;
