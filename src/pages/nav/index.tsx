@@ -48,7 +48,7 @@ const Nav = () => {
   //   });
   // });
   return (
-    <Text style={{height: '2000px'}}>
+    <Text>
       <div className={styles.nav} id="nav-container">
         <div></div>
         <div className={styles.nav__right} id="nav-left">
