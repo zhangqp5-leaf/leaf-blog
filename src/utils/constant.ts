@@ -230,3 +230,13 @@ export const blogMap: BlogMap = {
   '3': md3,
   '4': md4,
 }
+
+export const demoUrl = 'https://leaf-demos.vercel.app/';
+
+export const demoList = [
+  {
+    title: '日历卡片翻动效果',
+    content: 'content1',
+    url: `${demoUrl}countdown`, 
+  },
+]

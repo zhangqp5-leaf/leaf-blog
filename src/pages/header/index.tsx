@@ -25,6 +25,7 @@ const Home = () => {
       <section className={styles.right}>
         <Link to="/blog/list">blog</Link>
         <Link to="/nav">nav</Link>
+        <Link to="/demos">demos</Link>
         <section>
           <IconFont
             type={isSun ? "icon-sun" : "icon-moon"}
