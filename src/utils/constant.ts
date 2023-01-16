@@ -239,4 +239,9 @@ export const demoList = [
     content: 'content1',
     url: `${demoUrl}countdown`, 
   },
+  {
+    title: '拖拽排序',
+    content: 'content1',
+    url: `${demoUrl}dragDrop`, 
+  },
 ]
