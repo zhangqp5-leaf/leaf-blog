@@ -15,6 +15,9 @@ import apifoxImg from '@/assets/img/apifox.png';
 import golangImg from '@/assets/img/golang.png';
 import giteeImg from '@/assets/svg/gitee.svg';
 import jueJinImg from '@/assets/img/juejin.png';
+import umiImg from '@/assets/img/umi.png';
+import devDocsImg from '@/assets/svg/devdocs.svg';
+import vercelImg from '@/assets/svg/vercel.svg';
 
 import md1 from '@/assets/md/flex简介.md';
 import md2 from '@/assets/md/react生命周期.md';
@@ -47,6 +50,12 @@ export const codeNavData = {
       title: 'Iconfont 矢量图标库',
       des: '国内功能强大且图标丰富的矢量图标库，提供矢量图标下载、在线存储、格式转换等功能',
       url: 'https://www.iconfont.cn/',
+    },
+    {
+      imgUrl: umiImg,
+      title: 'umijs',
+      des: '企业级前端开发框架',
+      url: 'https://umijs.org/',
     },
   ],
   react: [
@@ -174,6 +183,20 @@ export const codeNavData = {
       des: '开发者社区',
       url: 'https://juejin.cn/',
     },
+    {
+      imgUrl: vercelImg,
+      title: 'vercel',
+      des: '开箱即用的免费网站部署服务',
+      url: 'https://vercel.com/dashboard',
+    },
+  ],
+  tool: [
+    {
+      imgUrl: devDocsImg,
+      title: 'DevDocs',
+      des: '便捷查询api的工具',
+      url: 'https://devdocs.io/',
+    }
   ],
 };
 export const codeNavTypeMap = new Map([
@@ -184,6 +207,7 @@ export const codeNavTypeMap = new Map([
   ['backend', '后端'],
   ['test', '测试'],
   ['platform', '平台'],
+  ['tool', '工具'],
 ]);
 
 /**blog数据源 */
