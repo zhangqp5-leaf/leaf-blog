@@ -24,8 +24,17 @@ import md2 from '@/assets/md/react生命周期.md';
 import md3 from '@/assets/md/节流和防抖.md';
 import md4 from '@/assets/md/简单聊一下git在工作中的使用.md';
 
+interface CodeNavData {
+  [key: string]: CodeNavDataItem[],
+};
+interface CodeNavDataItem {
+  imgUrl: String,
+  title: String,
+  des: String,
+  url: String,
+}
 /** 编程导航数据源 */
-export const codeNavData = {
+export const codeNavData: CodeNavData = {
   frontEndCommon: [
     {
       imgUrl: mdnImg,
@@ -199,7 +208,7 @@ export const codeNavData = {
     }
   ],
 };
-export const codeNavTypeMap = new Map([
+export const codeNavTypeMap: Map<String, String> = new Map([
   ['frontEndCommon', '前端通用'],
   ['react', 'react 框架'],
   ['vue', 'vue 框架'],
@@ -246,7 +255,7 @@ export const blogData: BlogData = {
   ],
 }
 interface BlogMap {
-  [key: string]: any,
+  [key: string]: String,
 }
 export const blogMap: BlogMap = {
   '1': md1,
