@@ -1,10 +1,10 @@
 import React from 'react';
-import { Layout, theme, Typography, ConfigProvider } from 'antd';
+import { Layout, theme, Typography, ConfigProvider, FloatButton } from 'antd';
 import RouteView from './router';
 import Header from './pages/header';
 import BackView from './pages/backView';
 import type { RootState } from './store';
-import { useSelector } from 'react-redux'
+import { useSelector } from 'react-redux';
 import './App.css';
 
 const { Text } = Typography;
@@ -32,6 +32,7 @@ function App() {
         <footer>
           <Text>@leaf</Text>
         </footer>
+        <FloatButton.BackTop />
       </Layout>
     </ConfigProvider>
   );
