@@ -22,7 +22,7 @@ import vercelImg from '@/assets/svg/vercel.svg';
 import md1 from '@/assets/md/flex简介.md';
 import md2 from '@/assets/md/react生命周期.md';
 import md3 from '@/assets/md/节流和防抖.md';
-import md4 from '@/assets/md/简单聊一下git在工作中的使用.md';
+import md4 from '@/assets/md/关于Git.md';
 
 interface CodeNavData {
   [key: string]: CodeNavDataItem[],
@@ -231,7 +231,7 @@ interface BlogDataItem {
 export const blogData: BlogData = {
   'a2022': [
     {
-      title: '简单聊一下git在工作中的使用',
+      title: '关于 Git',
       date: '2022-06-07',
       id: '4',
     },

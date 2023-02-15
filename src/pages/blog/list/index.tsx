@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import {Typography} from 'antd';
 import {blogData} from '../../../utils/constant';
 import styles from './index.module.less';
@@ -6,7 +6,7 @@ import {
   useNavigate,
 } from "react-router-dom";
 
-const {Text, Title, Paragraph} = Typography;
+const {Text} = Typography;
 
 const Blog = () => {
 
@@ -20,8 +20,6 @@ const Blog = () => {
       <div className={styles.blog}>
         {
           Object.entries(blogData).map(blogYear => {
-            console.log(blogData);
-            
             return (
               <div className={styles.blog__year}>
                 <section className={styles.blog__title}>{blogYear[0].substring(1)}</section>
