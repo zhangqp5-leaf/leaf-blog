@@ -1,6 +1,7 @@
 {
   "name": "leaf-blog",
   "version": "0.1.0",
+  "homepage": "http://loquatlo.gitee.io/leaf-blog/",
   "private": true,
   "dependencies": {
     "@craco/craco": "^7.0.0",
