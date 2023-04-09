@@ -6,6 +6,7 @@ import Blog from '../pages/blog';
 import BlogList from '../pages/blog/list';
 import BlogDetail from '../pages/blog/detail';
 import Demos from '../pages/demos';
+import RealHome from '../pages/realHome';
 
 const RouteView = () => {
   return (
@@ -17,6 +18,7 @@ const RouteView = () => {
       </Route>
       <Route path="/nav" element={<Nav />}></Route>
       <Route path="/demos" element={<Demos />}></Route>
+      <Route path="/realHome" element={<RealHome />}></Route>
       <Route path="/" element={<Home />}></Route>
     </Routes>
   )

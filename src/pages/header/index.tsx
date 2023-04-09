@@ -26,6 +26,7 @@ const Home = () => {
         <Link to="/blog/list">blog</Link>
         <Link to="/nav">nav</Link>
         <Link to="/demos">demos</Link>
+        <Link to="/realHome">home</Link>
         <section>
           <IconFont
             type={isSun ? "icon-sun" : "icon-moon"}
