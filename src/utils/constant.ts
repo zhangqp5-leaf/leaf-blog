@@ -277,4 +277,8 @@ export const demoList = [
     content: 'content1',
     url: `${demoUrl}dragDrop`, 
   },
-]
+];
+
+export const mapOutLayers = [
+  'http://t0.tianditu.gov.cn',
+];
