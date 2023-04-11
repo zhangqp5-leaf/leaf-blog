@@ -279,6 +279,15 @@ export const demoList = [
   },
 ];
 
-export const mapOutLayers = [
-  'http://t0.tianditu.gov.cn',
+export const homeList = [
+  {
+    name: '嘉致峰',
+    date: '2023-04-08',
+    position: [120.646743, 31.415401],
+  },
+  {
+    name: '花语-熙园',
+    date: '2023-04-08',
+    position: [120.691679, 31.42529],
+  },
 ];

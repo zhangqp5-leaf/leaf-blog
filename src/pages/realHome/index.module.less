@@ -1,10 +1,20 @@
 .container {
-  display: flex;
-  justify-content: center;
+  margin: 0 -24px;
+  position: relative;
+  // display: flex;
+  // justify-content: center;
   // align-items: center;
+  .leftPanel {
+    position: absolute;
+    left: 24px;
+    top: 24px;
+    z-index: 999;
+    background-color: violet;
+    height: 32px;
+  }
   .parcelMap {
     position: absolute;
-    height: 75vh;
-    width: 90vw;
+    height: 80vh;
+    width: 100vw;
   }
 }
