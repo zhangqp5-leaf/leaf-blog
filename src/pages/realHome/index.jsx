@@ -10,10 +10,6 @@ const RealHome = () => {
   const [mapAfter, setMapAfter] = useState(null);
   const [Map, setMap] = useState(null);
 
-  const DAYOPTION = [
-    '2023-04-08',
-  ];
-
   /**
    * 初始化创建地图
    */
@@ -33,10 +29,10 @@ const RealHome = () => {
         viewMode: '3D', // 是否为3D地图模式
         zoom: 13, // 初始化地图级别
         center: [120.644438, 31.421566], // 初始化地图中心点位置
-        layers: [
-          satellite,
-          roadNet,
-        ],
+        // layers: [
+        //   satellite,
+        //   roadNet,
+        // ],
       });
       const _param = {
         _Map: AMap,
@@ -93,7 +89,7 @@ const RealHome = () => {
     <div className={styles.container}>
       <div className={styles.leftPanel}>
         {
-          DAYOPTION.map(dayName => <Button
+          [...new Set(homeList.map(i => i.date))].map(dayName => <Button
             key={dayName}
             onClick={() => showHomeInfo(dayName)}
           >
