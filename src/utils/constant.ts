@@ -311,3 +311,14 @@ export const homeList = [
   //   position: [120.661965, 31.395077],
   // },
 ];
+
+export const destinationList = [
+  {
+    name: '苏州中心',
+    position: [120.677614, 31.318664],
+  },
+  {
+    name: '三星电子',
+    position: [120.776951, 31.329649],
+  },
+];
