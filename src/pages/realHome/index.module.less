@@ -4,13 +4,34 @@
   // display: flex;
   // justify-content: center;
   // align-items: center;
+  .topPanel {
+    position: absolute;
+    left: 450px;
+    top: 56px;
+    z-index: 999;
+  }
+  .mapOperation {
+    margin: 0 24px 12px 24px;
+  }
   .leftPanel {
     position: absolute;
     left: 24px;
-    top: 24px;
+    top: 56px;
     z-index: 999;
-    background-color: violet;
-    height: 32px;
+    background-color: white;
+    overflow-y: auto;
+    max-height: 70vh;
+    width: 300px;
+  }
+  .rightPanel {
+    position: absolute;
+    right: 24px;
+    top: 56px;
+    z-index: 999;
+    background-color: white;
+    overflow-y: auto;
+    max-height: 70vh;
+    width: 300px;
   }
   .parcelMap {
     position: absolute;
