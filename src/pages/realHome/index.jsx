@@ -120,74 +120,46 @@ const RealHome = () => {
   }
   const openPlanModal = () => {
     setVisible(!visible);
-    // Map.plugin('AMap.Driving', function() {
-    //   var driving = new Map.Driving({
-    //     // 驾车路线规划策略，Map.DrivingPolicy.LEAST_TIME是最快捷模式
-    //     policy: Map.DrivingPolicy.LEAST_TIME,
-    //     map: mapAfter,
-    //     panel: "leftPanel",
-    //   })
-      
-    //   var startLngLat = [120.644438, 31.421566]
-    //   var endLngLat = [120.691679, 31.42529]
-      
-    //   driving.search(startLngLat, endLngLat, function (status, result) {
-    //     // 未出错时，result即是对应的路线规划方案
-    //     if (status === 'complete') {
-    //       message.success('绘制驾车路线完成')
-    //     } else {
-    //       message.error('获取驾车数据失败：' + result)
-    //     }
-    //   })
-    // })
   }
   const startPlanRoute = (params) => {
     console.log('params', params);
     Map.plugin('AMap.Driving', function() {
-      // var driving = new Map.Driving({
-      //   // 驾车路线规划策略，Map.DrivingPolicy.LEAST_TIME是最快捷模式
-      //   policy: Map.DrivingPolicy.LEAST_TIME,
-      //   map: mapAfter,
-      //   panel: "leftPanel",
-      // })
-      
-      // var startLngLat = params.start.split(',');
-      // var endLngLat = params.end.split(',');
-      
-      // driving.search(startLngLat, endLngLat, function (status, result) {
-      //   // 未出错时，result即是对应的路线规划方案
-      //   if (status === 'complete') {
-      //     message.success('绘制驾车路线完成')
-      //   } else {
-      //     message.error('获取驾车数据失败：' + result)
-      //   }
-      // })
-      mapAfter.plugin('AMap.DragRoute', function () {
-        // path 是驾车导航的起、途径和终点，最多支持16个途经点
-        var path = []
-      
-        path.push(params.start.split(','))
-        path.push(params.end.split(','))
-      
-        var route = new Map.DragRoute(mapAfter, path, Map.DrivingPolicy.LEAST_FEE)
-        // 查询导航路径并开启拖拽导航
-        route.search(function (status, result) {
-          // 未出错时，result即是对应的路线规划方案
-          if (status === 'complete') {
-            message.success('绘制驾车路线完成')
-          } else {
-            message.error('获取驾车数据失败：' + result)
-          }
-        })
-        // driving.search(startLngLat, endLngLat, function (status, result) {
-        //   // 未出错时，result即是对应的路线规划方案
-        //   if (status === 'complete') {
-        //     message.success('绘制驾车路线完成')
-        //   } else {
-        //     message.error('获取驾车数据失败：' + result)
-        //   }
-        // })
+      var driving = new Map.Driving({
+        // 驾车路线规划策略，Map.DrivingPolicy.LEAST_TIME是最快捷模式
+        policy: Map.DrivingPolicy.LEAST_TIME,
+        map: mapAfter,
+        panel: "leftPanel",
       })
+      
+      var startLngLat = params.start.split(',');
+      var endLngLat = params.end.split(',');
+      
+      driving.search(startLngLat, endLngLat, function (status, result) {
+        // 未出错时，result即是对应的路线规划方案
+        if (status === 'complete') {
+          message.success('绘制驾车路线完成')
+        } else {
+          message.error('获取驾车数据失败：' + result)
+        }
+      })
+      // mapAfter.plugin('AMap.DragRoute', function () {
+      //   // path 是驾车导航的起、途径和终点，最多支持16个途经点
+      //   var path = []
+      
+      //   path.push(params.start.split(','))
+      //   path.push(params.end.split(','))
+      
+      //   var route = new Map.DragRoute(mapAfter, path, Map.DrivingPolicy.LEAST_FEE)
+      //   // 查询导航路径并开启拖拽导航
+      //   route.search(function (status, result) {
+      //     // 未出错时，result即是对应的路线规划方案
+      //     if (status === 'complete') {
+      //       message.success('绘制驾车路线完成')
+      //     } else {
+      //       message.error('获取驾车数据失败：' + result)
+      //     }
+      //   })
+      // })
     })
     setVisible(false);
   }
