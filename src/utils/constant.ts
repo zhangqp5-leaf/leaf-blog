@@ -277,6 +277,16 @@ export const demoList = [
     content: 'content1',
     url: `${demoUrl}dragDrop`, 
   },
+  {
+    title: '立体文字',
+    content: 'content1',
+    url: `${demoUrl}threeDimensional`, 
+  },
+  {
+    title: '开关动画',
+    content: 'content1',
+    url: `${demoUrl}radioTab`, 
+  },
 ];
 
 export const homeList = [
