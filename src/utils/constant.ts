@@ -264,7 +264,8 @@ export const blogMap: BlogMap = {
   '4': md4,
 }
 
-export const demoUrl = 'https://leaf-demos.vercel.app/';
+// export const demoUrl = 'https://leaf-demos.vercel.app/';
+export const demoUrl = 'http://122.51.12.76:9003/';
 
 export const demoList = [
   {
