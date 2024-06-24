@@ -7,7 +7,7 @@ import { changeLightDark } from '../../store/lightDarkSlice';
 import classNames from "classnames";
 import styles from './index.module.less';
 
-const Home = () => {
+const Header = () => {
   const isSun = useSelector((state: RootState) => state.lightDark.value)
   const dispatch = useDispatch()
   const IconFont = createFromIconfontCN({
@@ -39,4 +39,4 @@ const Home = () => {
   )
 };
 
-export default Home;
+export default Header;

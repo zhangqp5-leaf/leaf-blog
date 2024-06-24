@@ -19,11 +19,6 @@ import umiImg from '@/assets/img/umi.png';
 import devDocsImg from '@/assets/svg/devdocs.svg';
 import vercelImg from '@/assets/svg/vercel.svg';
 
-import md1 from '@/assets/md/flex简介.md';
-import md2 from '@/assets/md/react生命周期.md';
-import md3 from '@/assets/md/节流和防抖.md';
-import md4 from '@/assets/md/关于Git.md';
-
 interface CodeNavData {
   [key: string]: CodeNavDataItem[],
 };
@@ -219,49 +214,80 @@ export const codeNavTypeMap: Map<String, String> = new Map([
   ['tool', '工具'],
 ]);
 
-/**blog数据源 */
-interface BlogData {
-  [key: string]: BlogDataItem[]
-}
+export const blogList: BlogDataItem[] = [
+  {
+    title: 'vue常见优化手段',
+    date: '2024-06-10',
+    value: () => import('@/assets/md/vue常见优化手段.md'),
+    id: '11',
+  },
+  {
+    title: 'CSS包含块',
+    date: '2024-04-02',
+    value: () => import('@/assets/md/CSS包含块.md'),
+    id: '10',
+  },
+  {
+    title: '浏览器渲染页面的过程',
+    date: '2024-03-01',
+    value: () => import('@/assets/md/浏览器渲染页面的过程.md'),
+    id: '9',
+  },
+  {
+    title: '事件循环',
+    date: '2024-02-28',
+    value: () => import('@/assets/md/事件循环.md'),
+    id: '8',
+  },
+  {
+    title: '关于Promise',
+    date: '2023-12-18',
+    value: () => import('@/assets/md/关于Promise.md'),
+    id: '7',
+  },
+  {
+    title: '手写js原生函数系列',
+    date: '2022-08-24',
+    value: () => import('@/assets/md/手写js原生函数系列.md'),
+    id: '6',
+  },
+  {
+    title: '记一次Antd4升级过程',
+    date: '2022-06-10',
+    value: () => import('@/assets/md/记一次Antd4升级过程.md'),
+    id: '5',
+  },
+  {
+    title: '关于Git',
+    date: '2022-06-07',
+    value: () => import('@/assets/md/关于Git.md'),
+    id: '4',
+  },
+  {
+    title: '节流和防抖',
+    date: '2022-06-07',
+    value: () => import('@/assets/md/节流和防抖.md'),
+    id: '3',
+  },
+  {
+    title: 'flex简介',
+    date: '2022-03-01',
+    value: () => import('@/assets/md/flex简介.md'),
+    id: '1',
+  },
+  {
+    title: 'react生命周期',
+    date: '2021-09-24',
+    value: () => import('@/assets/md/react生命周期.md'),
+    id: '2',
+  },
+];
+
 interface BlogDataItem {
   title: String,
   date: String,
   id: string,
-}
-export const blogData: BlogData = {
-  'a2022': [
-    {
-      title: '关于 Git',
-      date: '2022-06-07',
-      id: '4',
-    },
-    {
-      title: '节流和防抖',
-      date: '2022-06-07',
-      id: '3',
-    },
-    {
-      title: 'flex简介',
-      date: '2022-03-01',
-      id: '1',
-    },
-  ],
-  'a2021': [
-    {
-      title: 'react生命周期',
-      date: '2021-09-24',
-      id: '2',
-    },
-  ],
-}
-interface BlogMap {
-  [key: string]: String,
-}
-export const blogMap: BlogMap = {
-  '1': md1,
-  '2': md2,
-  '3': md3,
-  '4': md4,
+  value: any,
 }
 
 // export const demoUrl = 'https://leaf-demos.vercel.app/';

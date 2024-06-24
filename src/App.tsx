@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Layout, theme, Typography, ConfigProvider, FloatButton } from 'antd';
 import RouteView from './router';
 import Header from './pages/header';
-import BackView from './pages/backView';
 import type { RootState } from './store';
 import { useSelector } from 'react-redux';
 import './App.css';
@@ -10,7 +9,15 @@ import './App.css';
 const { Text } = Typography;
 
 function App() {
-  const isSun = useSelector((state: RootState) => state.lightDark.value)
+  const isSun = useSelector((state: RootState) => state.lightDark.value);
+
+  useEffect(() => {
+    if (isSun) {
+      document.documentElement.style.setProperty('--body-bg-color', '#f5f5f5');
+    } else {
+      document.documentElement.style.setProperty('--body-bg-color', '#141414');
+    }
+  }, [isSun]);
 
   return (
     <ConfigProvider
@@ -21,8 +28,7 @@ function App() {
         algorithm: isSun ? theme.defaultAlgorithm : theme.darkAlgorithm,
       }}
     >
-      <Layout style={{background: isSun ? 'transparent' : '#141414'}}>
-        <BackView />
+      <Layout style={{background: 'transparent'}}>
         <header>
           <Header />
         </header>

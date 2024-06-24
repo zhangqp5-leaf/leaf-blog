@@ -1,12 +1,13 @@
 import React from "react";
 import {Typography} from 'antd';
-import {blogData} from '../../../utils/constant';
+import {blogList} from '../../../utils/constant';
 import styles from './index.module.less';
 import {
   useNavigate,
 } from "react-router-dom";
 
 const {Text} = Typography;
+const yearList = [...new Set(blogList.map(blogItem => blogItem.date.split('-')[0]))];
 
 const Blog = () => {
 
@@ -19,14 +20,14 @@ const Blog = () => {
     <Text>
       <div className={styles.blog}>
         {
-          Object.entries(blogData).map(blogYear => {
+          yearList.map(blogYear => {
             return (
-              <div className={styles.blog__year}>
-                <section className={styles.blog__title}>{blogYear[0].substring(1)}</section>
+              <div className={styles.blog__year} key={blogYear}>
+                <section className={styles.blog__title}>{blogYear}</section>
                 {
-                  blogYear[1].map(blog => {
+                  blogList.filter(i => i.date.split('-')[0] === blogYear).map(blog => {
                     return (
-                      <div className={styles.blog__item} onClick={() => goBlogDetail(blog.id)}>
+                      <div className={styles.blog__item} key={blog.id} onClick={() => goBlogDetail(blog.id)}>
                         <section className={styles.blog__item__title}>{blog.title}</section>
                         <section>{blog.date}</section>
                       </div>

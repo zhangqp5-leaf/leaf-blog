@@ -97,7 +97,9 @@ componentDidUpdate(prevProps) {
 
 该函数会在组件卸载及销毁之前直接调用，在此函数中进行必要的清理操作。
 
-# 函数组件生命周期
+# 函数组件
+
+函数组件没有生命周期，有相应`hooks`可实现类生命周期函数的功能
 
 ## useState()
 
@@ -113,7 +115,7 @@ const [count, setCount] = useState(0)
 
 可以把 useEffect 看作 componentDidMount 、 componentDidUpdate 、 componentWillUnmount 的组合
 
-# 两种生命周期函数的对应
+# 两种组件的对应
 
 ## componentDidMount()
 

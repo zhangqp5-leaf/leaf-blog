@@ -18,7 +18,7 @@ const BackView = () => {
   };
 
   const init = (ctx: CanvasRenderingContext2D) => {
-    ctx.strokeStyle = 'rgba(0, 0, 0, 0.1)';
+    ctx.strokeStyle = 'rgba(128, 128, 128, 0.3)';
     step(ctx, {
       start: {x: WIDTH * Math.random(), y: HEIGHT},
       length: 1,
@@ -44,14 +44,14 @@ const BackView = () => {
   const step = (ctx: CanvasRenderingContext2D, b: Branch, depth=0) => {
     const end = getEndPoint(b)
     drawBranch(ctx, b);
-    if ((depth < 4 || Math.random() < 0.5) && depth < WIDTH / 2) {
+    if ((depth < 3 || Math.random() < 0.5) && depth < WIDTH / 2) {
       pendingTasks.push(() => step(ctx, {
         start: end,
         length: b.length + (Math.random() * 2 - 1),
         theta: b.theta - 0.4 * Math.random()
       }, depth + 1))
     }
-    if ((depth < 4 || Math.random() < 0.5) && depth < WIDTH / 2) {
+    if ((depth < 3 || Math.random() < 0.5) && depth < WIDTH / 2) {
       pendingTasks.push(() => step(ctx, {
         start: end,
         length: b.length + (Math.random() * 2 - 1),
@@ -68,7 +68,7 @@ const BackView = () => {
   function startFrame() {
     requestAnimationFrame(() => {
       frameCount = frameCount + 1
-      if (frameCount % 12 === 0) {
+      if (frameCount % 18 === 0) {
         frame();
       }
       startFrame()

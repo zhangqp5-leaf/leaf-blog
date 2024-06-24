@@ -1,17 +1,16 @@
-header {
-  /* display: flex;
-  justify-content: space-between;
-  align-items: center; */
-  height: var(--header-height);
-}
-
 footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  display: none;
   height: var(--footer-height);
 }
 
 main {
   padding: 24px;
+}
+
+.ant-typography pre {
+  padding: 0;
+  border: none;
 }

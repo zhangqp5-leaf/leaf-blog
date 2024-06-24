@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { HashRouter } from "react-router-dom";
 import './assets/css/global.less';
 import App from './App';
+import BackView from './pages/backView';
 import { store } from './store'
 import { Provider } from 'react-redux'
 import reportWebVitals from './reportWebVitals';
@@ -14,6 +15,7 @@ root.render(
   <React.StrictMode>
     <HashRouter>
       <Provider store={store}>
+        <BackView />
         <App/>
       </Provider>
     </HashRouter>
