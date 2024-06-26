@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <Typography className={styles.container}>
       <h1>张启鹏</h1>
-      <pre>Web Developer</pre>
+      <pre>Frontend Developer</pre>
       <section className={styles.footer}>
         <a href={resumeUrl} target="_blank">简历</a>
         <Link to="/blog/list">博客</Link>
