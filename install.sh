@@ -7,7 +7,7 @@ yarn build
 echo "----------------编译完成----------------"
 
 echo "---------------复制包到指定目录--------------"
-cp -r /root/frontend/leaf-blog/build /usr/share/nginx/blog_html
+cp -rf /root/frontend/leaf-blog/build /usr/share/nginx/blog_html
 echo "---------------复制完成---------------------"
 
 echo "---------------重启nginx---------------"

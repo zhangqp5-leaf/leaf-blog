@@ -245,12 +245,12 @@ export const blogList: BlogDataItem[] = [
     value: () => import('@/assets/md/关于Promise.md'),
     id: '7',
   },
-  {
-    title: '手写js原生函数系列',
-    date: '2022-08-24',
-    value: () => import('@/assets/md/手写js原生函数系列.md'),
-    id: '6',
-  },
+  // {
+  //   title: '手写js原生函数系列',
+  //   date: '2022-08-24',
+  //   value: () => import('@/assets/md/手写js原生函数系列.md'),
+  //   id: '6',
+  // },
   {
     title: '记一次Antd4升级过程',
     date: '2022-06-10',
