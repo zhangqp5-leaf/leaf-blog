@@ -7,10 +7,27 @@ import remarkGfm from 'remark-gfm'
 import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter'
 import {oneLight, darcula} from 'react-syntax-highlighter/dist/esm/styles/prism'
 import { useSelector } from 'react-redux';
+import {copyToClipboard} from '@/utils';
 
 import styles from './index.module.less';
 
 const {Text} = Typography;
+
+const CodeTitleBar = (props) => {
+  const copyCode = () => {
+    if (typeof props.codes === 'string') {
+      copyToClipboard(props.codes);
+    } else if (Array.isArray(props.codes)) {
+      copyToClipboard(props.codes[0]);
+    }
+  };
+  return (
+    <div className={styles.titlebar}>
+      <span>{props.language}</span>
+      <span className={styles.tablerCopy} onClick={copyCode}></span>
+    </div>
+  );
+};
 
 const Blog = () => {
   const params =useParams()
@@ -19,7 +36,7 @@ const Blog = () => {
 
   const loadContent = async () => {
     let loadedContent = '';
-    const resolvedContent = await blogList.find(i => i.id === params.id).value();
+    const resolvedContent = await blogList.find(i => i.title === params.title).value();
     loadedContent = resolvedContent.default;
     fetch(loadedContent)
         .then(res => res.text())
@@ -42,13 +59,17 @@ const Blog = () => {
             code({node, inline, className, children, ...props}) {
               const match = /language-(\w+)/.exec(className || '')
               return !inline && match ? (
-                <SyntaxHighlighter
-                  children={String(children).replace(/\n$/, '')}
-                  style={isSun ? oneLight : darcula}
-                  language={match[1]}
-                  PreTag="div"
-                  {...props}
-                />
+                <div className={styles.codes}>
+                  <CodeTitleBar codes={children} language={match?.[1] || ''} />
+                  <SyntaxHighlighter
+                    children={String(children).replace(/\n$/, '')}
+                    style={isSun ? oneLight : darcula}
+                    language={match[1]}
+                    showLineNumbers
+                    PreTag="div"
+                    {...props}
+                  />
+                </div>
               ) : (
                 <code className={className} {...props}>
                   {children} 

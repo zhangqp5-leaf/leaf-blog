@@ -13,7 +13,7 @@ const RouteView = () => {
     <Routes>
       <Route path="/home" element={<Home />}></Route>
       <Route path="/blog" element={<Blog />}>
-        <Route path=":id" element={<BlogDetail/>}></Route>
+        <Route path=":title" element={<BlogDetail/>}></Route>
         <Route path="list" element={<BlogList />}></Route>
       </Route>
       <Route path="/nav" element={<Nav />}></Route>

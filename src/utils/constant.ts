@@ -216,77 +216,70 @@ export const codeNavTypeMap: Map<String, String> = new Map([
 
 export const blogList: BlogDataItem[] = [
   {
+    title: 'vue2的生命周期函数',
+    date: '2024-06-25',
+    value: () => import('@/assets/md/2024/vue2的生命周期函数.md'),
+  },
+  {
     title: 'vue常见优化手段',
     date: '2024-06-10',
-    value: () => import('@/assets/md/vue常见优化手段.md'),
-    id: '11',
+    value: () => import('@/assets/md/2024/vue常见优化手段.md'),
   },
   {
     title: 'CSS包含块',
     date: '2024-04-02',
-    value: () => import('@/assets/md/CSS包含块.md'),
-    id: '10',
+    value: () => import('@/assets/md/2024/CSS包含块.md'),
   },
   {
     title: '浏览器渲染页面的过程',
     date: '2024-03-01',
-    value: () => import('@/assets/md/浏览器渲染页面的过程.md'),
-    id: '9',
+    value: () => import('@/assets/md/2024/浏览器渲染页面的过程.md'),
   },
   {
     title: '事件循环',
     date: '2024-02-28',
-    value: () => import('@/assets/md/事件循环.md'),
-    id: '8',
+    value: () => import('@/assets/md/2024/事件循环.md'),
   },
   {
     title: '关于Promise',
     date: '2023-12-18',
-    value: () => import('@/assets/md/关于Promise.md'),
-    id: '7',
+    value: () => import('@/assets/md/2023/关于Promise.md'),
   },
   // {
   //   title: '手写js原生函数系列',
   //   date: '2022-08-24',
-  //   value: () => import('@/assets/md/手写js原生函数系列.md'),
-  //   id: '6',
+  //   value: () => import('@/assets/md/2022/手写js原生函数系列.md'),
   // },
   {
     title: '记一次Antd4升级过程',
     date: '2022-06-10',
-    value: () => import('@/assets/md/记一次Antd4升级过程.md'),
-    id: '5',
+    value: () => import('@/assets/md/2022/记一次Antd4升级过程.md'),
   },
   {
     title: '关于Git',
     date: '2022-06-07',
-    value: () => import('@/assets/md/关于Git.md'),
-    id: '4',
+    value: () => import('@/assets/md/2022/关于Git.md'),
   },
   {
     title: '节流和防抖',
     date: '2022-06-07',
-    value: () => import('@/assets/md/节流和防抖.md'),
-    id: '3',
+    value: () => import('@/assets/md/2022/节流和防抖.md'),
   },
   {
     title: 'flex简介',
     date: '2022-03-01',
-    value: () => import('@/assets/md/flex简介.md'),
-    id: '1',
+    value: () => import('@/assets/md/2022/flex简介.md'),
   },
   {
     title: 'react生命周期',
     date: '2021-09-24',
-    value: () => import('@/assets/md/react生命周期.md'),
-    id: '2',
+    value: () => import('@/assets/md/2021/react生命周期.md'),
   },
 ];
 
 interface BlogDataItem {
-  title: String,
+  title: string,
   date: String,
-  id: string,
   value: any,
 }
 

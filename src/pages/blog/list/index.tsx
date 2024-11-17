@@ -13,8 +13,8 @@ const Blog = () => {
 
   let navigate = useNavigate();
   
-  const goBlogDetail = (id: string) => {
-    navigate(`/blog/${id}`)
+  const goBlogDetail = (title: string) => {
+    navigate(`/blog/${title}`)
   }
   return (
     <Text>
@@ -27,7 +27,7 @@ const Blog = () => {
                 {
                   blogList.filter(i => i.date.split('-')[0] === blogYear).map(blog => {
                     return (
-                      <div className={styles.blog__item} key={blog.id} onClick={() => goBlogDetail(blog.id)}>
+                      <div className={styles.blog__item} key={blog.title} onClick={() => goBlogDetail(blog.title)}>
                         <section className={styles.blog__item__title}>{blog.title}</section>
                         <section>{blog.date}</section>
                       </div>
