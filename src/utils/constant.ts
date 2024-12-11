@@ -18,6 +18,11 @@ import jueJinImg from '@/assets/img/juejin.png';
 import umiImg from '@/assets/img/umi.png';
 import devDocsImg from '@/assets/svg/devdocs.svg';
 import vercelImg from '@/assets/svg/vercel.svg';
+import plasmoImg from '@/assets/img/plasmo.png';
+import wxtImg from '@/assets/img/wxt.png';
+import uniappImg from '@/assets/img/uni-app.png';
+import expressJsImg from '@/assets/img/expressJs.png';
+import midwayJsImg from '@/assets/svg/midwayJs.svg';
 
 interface CodeNavData {
   [key: string]: CodeNavDataItem[],
@@ -60,6 +65,18 @@ export const codeNavData: CodeNavData = {
       title: 'umijs',
       des: '企业级前端开发框架',
       url: 'https://umijs.org/',
+    },
+    {
+      imgUrl: plasmoImg,
+      title: 'Plasmo',
+      des: '浏览器插件开发',
+      url: 'https://www.plasmo.com/',
+    },
+    {
+      imgUrl: wxtImg,
+      title: 'Wxt',
+      des: '浏览器插件开发',
+      url: 'https://wxt.dev/',
     },
   ],
   react: [
@@ -151,6 +168,12 @@ export const codeNavData: CodeNavData = {
       des: '谷歌的移动UI框架，可以快速在iOS和Android上构建高质量的原生用户界面',
       url: 'https://flutterchina.club/',
     },
+    {
+      imgUrl: uniappImg,
+      title: 'uni-app',
+      des: '一个使用 Vue.js 开发所有前端应用的框架',
+      url: 'https://uniapp.dcloud.net.cn/',
+    },
   ],
   backend: [
     {
@@ -158,6 +181,18 @@ export const codeNavData: CodeNavData = {
       title: 'GO',
       des: 'GO API 文档',
       url: 'https://studygolang.com/pkgdoc',
+    },
+    {
+      imgUrl: expressJsImg,
+      title: 'Express.js',
+      des: '适用于Node.js的快速、简约的 Web 框架',
+      url: 'https://expressjs.com/',
+    },
+    {
+      imgUrl: midwayJsImg,
+      title: 'midway.js',
+      des: '阿里巴巴-淘宝前端架构团队基于渐进式开发理念开发的Node.js框架',
+      url: 'https://midwayjs.org/en/',
     },
   ],
   test: [
@@ -220,11 +255,11 @@ export const blogList: BlogDataItem[] = [
     date: '2024-06-25',
     value: () => import('@/assets/md/2024/vue2的生命周期函数.md'),
   },
-  {
-    title: 'vue常见优化手段',
-    date: '2024-06-10',
-    value: () => import('@/assets/md/2024/vue常见优化手段.md'),
-  },
+  // {
+  //   title: 'vue常见优化手段',
+  //   date: '2024-06-10',
+  //   value: () => import('@/assets/md/2024/vue常见优化手段.md'),
+  // },
   {
     title: 'CSS包含块',
     date: '2024-04-02',
