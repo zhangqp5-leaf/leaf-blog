@@ -27,6 +27,7 @@ const Header = () => {
         <Link to="/nav">nav</Link>
         <Link to="/demos">demos</Link>
         <Link to="/realHome">home</Link>
+        <Link to="/chat">chat</Link>
         <section>
           <IconFont
             type={isSun ? "icon-sun" : "icon-moon"}

@@ -7,6 +7,7 @@ import BlogList from '../pages/blog/list';
 import BlogDetail from '../pages/blog/detail';
 import Demos from '../pages/demos';
 import RealHome from '../pages/realHome';
+import Chat from '../pages/chat';
 
 const RouteView = () => {
   return (
@@ -19,6 +20,7 @@ const RouteView = () => {
       <Route path="/nav" element={<Nav />}></Route>
       <Route path="/demos" element={<Demos />}></Route>
       <Route path="/realHome" element={<RealHome />}></Route>
+      <Route path="/chat" element={<Chat />}></Route>
       <Route path="/" element={<Home />}></Route>
     </Routes>
   )

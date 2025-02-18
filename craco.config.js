@@ -21,6 +21,14 @@ module.exports = {
       "@":addPath("src")
     }
   },
+  devServer: {
+    proxy: {
+      '/api': {
+        target: 'http://192.168.1.2:2119/',
+        changeOrigin: true,
+      },
+    },
+  },
   rules: [
     {
       test: /\.md$/,
