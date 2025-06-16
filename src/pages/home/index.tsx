@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import {Typography} from 'antd';
 import styles from './index.module.less';
 
-const resumeUrl = 'http://122.51.12.76:2119/static/images/food-imgs/leaf_resume.pdf';
+const resumeUrl = 'http://117.72.173.5/leaf_resume.pdf';
 
 const Home = () => {
   return (

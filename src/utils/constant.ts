@@ -319,8 +319,7 @@ interface BlogDataItem {
 }
 
 // export const demoUrl = 'https://leaf-demos.vercel.app/';
-export const demoUrl = 'http://122.51.12.76:9003/';
-
+export const demoUrl = 'http://117.72.173.5:9003/';
 export const demoList = [
   {
     title: '日历卡片翻动效果',
